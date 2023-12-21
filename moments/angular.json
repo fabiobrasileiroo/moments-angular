@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "moments-angular": {
+    "moments": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/moments-angular",
+            "outputPath": "dist/moments",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "moments-angular:build:production"
+              "browserTarget": "moments:build:production"
             },
             "development": {
-              "browserTarget": "moments-angular:build:development"
+              "browserTarget": "moments:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "moments-angular:build"
+            "browserTarget": "moments:build"
           }
         },
         "test": {
@@ -98,7 +102,5 @@
       }
     }
   },
-  "cli": {
-    "analytics": "7e413c76-e974-4f6a-866d-d4963e0c00ea"
-  }
+  "defaultProject": "moments"
 }
