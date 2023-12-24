@@ -10,10 +10,11 @@ import { Moment } from 'src/app/Moment';
   styleUrls: ['./moment-form.component.css']
 })
 export class MomentFormComponent implements OnInit {
-  @Output() onSubmit = new EventEmitter<Moment>()
-  @Input() btnText!: string
+  @Output() onSubmit = new EventEmitter<Moment>();
+  @Input() btnText!: string;
+  @Input() momentData: Moment | null = null;
 
-  momentForm!: FormGroup
+  momentForm!: FormGroup;
   constructor() { }
 
   ngOnInit(): void {
